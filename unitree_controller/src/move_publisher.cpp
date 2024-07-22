@@ -15,7 +15,7 @@ int main(int argc, char **argv)
         WORLD,
         ROBOT
     };
-    coord def_frame = coord::WORLD;
+    coord def_frame = coord::ROBOT;
 
     ros::init(argc, argv, "move_publisher");
     ros::NodeHandle nh;
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     model_state_pub.model_name = robot_name + "_gazebo";
     ros::Rate loop_rate(1000);
 
-    if(def_frame == coord::WORLD)
+    if(def_frame == coord::ROBOT)
     {
         model_state_pub.pose.position.x = 0.0;
         model_state_pub.pose.position.y = 0.0;
